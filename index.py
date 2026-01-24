@@ -99,8 +99,165 @@ x, y, z = 10, 20, 30
     ii. Float float() e.g 12.12
     iii. Complex complex() e.g 2 + 3j
 
-"""
+3. Bolean Type: bool()  e.g True, False
+4. Sequence types:
+    i. list()  e.g [1, 2, 3, 4]
+    ii. tuple() e.g (1, 2, 3, 4)
+    iii. range() e.g range(5)
 
-var1 = "Tayo"
-var = 12.23 + 2j
-print(type(var))
+5. Mapping type:
+    i. Dictionary: Dict() e.g {key: value}
+    
+6. NoneType: None
+
+7. Binary Type:
+    i. Byte
+    ii. Bytearray
+    iii. memoryView
+    
+8. Set type:
+    i. set() e.g {}
+
+"""
+# Check the lecture for Datatypes and python operator
+
+# var1 = "Tayo"
+# var = 12.23 + 2j
+# var = True
+# var = ("tope", "chioma", "eniola", True, 50)
+# var = ["tope", "chioma", "eniola", True, 50]
+# var = list(range(1, 6, 2))
+
+# print(type(var))
+# print(var)
+# print(len(var))
+# print(var[-3])
+
+student = {
+    "name": "Chioma",
+    "gender": "Female",
+    "course": "Data Science"
+}
+
+# print(type(student))
+# print(student["gender"])
+
+var = None
+# print(type(var))
+# print(var)
+
+# var = b"Chioma"
+# var = bytearray([12, 34, 56])
+# print(type(var))
+# print(var)
+# var1 = memoryview(var)
+# print(var1)
+
+
+# setA = {"tope", "chioma", "eniola"}
+# setB = {4, 5, 1, 2, 3}
+# print(type(setB))
+
+# int("Tayo")
+
+# empty states 
+# 1. 0
+# 2. None 
+# 3. ""
+# 4. []
+
+# num = bool([""])
+# print(num)
+
+
+# Python operators
+# 1. Arithmetic operator: +, -, *, /, **, //, %
+# print(5%3)
+# 2. Assignment operator: =, +=, -= , *=, **=
+# x = 5
+# x += 1
+# x -= 2
+# print(x)
+
+# 3. comparison operator: ==, !=, >, <, >=, <=
+x = 5
+# print(x < 6)
+# print( x < 6 < x)
+
+# 4. Logical operator: and, or, not
+
+"""
+A   B   AND     OR      NOT OR
+0   0   0       0       1
+0   1   0       1       0
+1   0   0       1       0
+1   1   1       1       0
+
+"""
+rice = True
+beans = False
+
+# print(rice and beans)
+
+# 5. Membership operator: in, not in
+
+# python_class = ["Habeeb", "Caleb", "Chioma", "Eniola"]
+# print("Eniola" not in python_class)
+# print("chioma" not in python_class and "Caleb" in python_class)
+
+# 6. Identity operator: is, is not
+x = 5
+y = 6
+# print(x is y)
+
+
+# 7. Bitwise opertors: 
+#       & - and 
+#       | - or  
+#       ~ - not 
+#       ^ - XOR
+
+# print(bin(10))          # 1  0   1   0
+# print(bin(5))           #    1   0   1
+# print(bin(10 & 5))      # 0  0   0   0
+# print(bin(10 | 5))
+# print(bin(10 ^ 5))
+# print(~10)
+
+
+# condition statement (if/else)
+# x = 5
+# if x >= 5:
+#     print("X is greater than or equal 5")
+# else: 
+#     print('X is less than 5 bro!')
+
+
+# name = input("Name: ")
+# if name:
+#     print(f"Welcome {name}")
+# else: 
+#     print("Kindly input your name")
+
+
+# USSD
+ussd = input("USSD code: ")
+if ussd == "*312#":
+    print("""
+        1. Buy Data
+        2. Check balance
+        #. Exit
+    """)
+elif ussd == "*140#":
+    print("Oh bro that has been change to *312#")    
+
+else:
+    print("Invalid ussd code")
+    
+
+# 1. Build an application that tells if a number is odd or even
+# 2. Build an application that tells if a number is fizz, buzz or fizzbuzz
+
+# fizz - divisible by 3
+# buzz - divisible by 5
+# fizzbuzz - divisible by 3 and 5
