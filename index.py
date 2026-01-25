@@ -241,18 +241,40 @@ y = 6
 
 
 # USSD
-ussd = input("USSD code: ")
-if ussd == "*312#":
-    print("""
-        1. Buy Data
-        2. Check balance
-        #. Exit
-    """)
-elif ussd == "*140#":
-    print("Oh bro that has been change to *312#")    
+# ussd = input("USSD code: ")
+# if ussd == "*312#":
+#     print("""
+#         1. Buy Data
+#         2. Check balance
+#         #. Exit
+#     """)
+#     option = input("option: ")
+#     if option == "1":
+#         print("""
+#         1. Daily plan
+#         2. Weekly plan
+#         3. Monthly plan
+#         """) 
+#         option = input("option: ")
+#         if option == "1":
+#             print("Daily plan")
+#         elif option == "2":
+#             print("Weekly plan")
+#         elif option == "3":
+#             print("Monthly plan")
+        
+#     elif option == "2":
+#         print("Your balance is ****")
+#     elif option == "#":
+#         print("Thank you for banking with us")
+#     else:
+#         print("Invalid input")
+        
+# elif ussd == "*140#":
+#     print("Oh bro that has been change to *312#")    
 
-else:
-    print("Invalid ussd code")
+# else:
+#     print("Invalid ussd code")
     
 
 # 1. Build an application that tells if a number is odd or even
@@ -261,3 +283,56 @@ else:
 # fizz - divisible by 3
 # buzz - divisible by 5
 # fizzbuzz - divisible by 3 and 5
+
+
+
+balance = 0
+while True:
+    print("""
+        1. Deposit
+        2. Withraw
+        3. Check balance
+        #. Exit
+    """)
+
+    option = input("Your option: ")
+    if option == "1":
+        print("""
+            1. #500
+            2. #1000
+            3. Your amount
+        """)
+        option = input("Option: ")
+        if option == "1":
+            balance += 500
+            print(f"#500 deposit successfully. Your balance is #{balance}")
+        elif option == "2":
+            balance += 1000
+            print(f"#1000 deposit successfully. Your balance is #{balance}")
+        elif option == "3":
+            amount = float(input("Amount: "))
+            balance += amount
+            print(f"#{amount} deposit successfully. Your balance is #{balance}")
+        else: 
+            print("Invalid option")
+            
+    elif option == "2":
+        pass
+
+    elif option == "3":
+        print(f"Your balance is #{balance}")
+
+    elif option == "#":
+        print("Thanks for banking with us.")
+        break
+        
+    else: 
+        print("Invalid option")
+
+
+# x = 1
+# while True:
+#     print("hello", x)
+#     x += 1
+#     if x == 10:
+#         break
