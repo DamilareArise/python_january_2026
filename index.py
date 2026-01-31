@@ -286,48 +286,48 @@ y = 6
 
 
 
-balance = 0
-while True:
-    print("""
-        1. Deposit
-        2. Withraw
-        3. Check balance
-        #. Exit
-    """)
+# balance = 0
+# while True:
+#     print("""
+#         1. Deposit
+#         2. Withraw
+#         3. Check balance
+#         #. Exit
+#     """)
 
-    option = input("Your option: ")
-    if option == "1":
-        print("""
-            1. #500
-            2. #1000
-            3. Your amount
-        """)
-        option = input("Option: ")
-        if option == "1":
-            balance += 500
-            print(f"#500 deposit successfully. Your balance is #{balance}")
-        elif option == "2":
-            balance += 1000
-            print(f"#1000 deposit successfully. Your balance is #{balance}")
-        elif option == "3":
-            amount = float(input("Amount: "))
-            balance += amount
-            print(f"#{amount} deposit successfully. Your balance is #{balance}")
-        else: 
-            print("Invalid option")
+#     option = input("Your option: ")
+#     if option == "1":
+#         print("""
+#             1. #500
+#             2. #1000
+#             3. Your amount
+#         """)
+#         option = input("Option: ")
+#         if option == "1":
+#             balance += 500
+#             print(f"#500 deposit successfully. Your balance is #{balance}")
+#         elif option == "2":
+#             balance += 1000
+#             print(f"#1000 deposit successfully. Your balance is #{balance}")
+#         elif option == "3":
+#             amount = float(input("Amount: "))
+#             balance += amount
+#             print(f"#{amount} deposit successfully. Your balance is #{balance}")
+#         else: 
+#             print("Invalid option")
             
-    elif option == "2":
-        pass
+#     elif option == "2":
+#         pass
 
-    elif option == "3":
-        print(f"Your balance is #{balance}")
+#     elif option == "3":
+#         print(f"Your balance is #{balance}")
 
-    elif option == "#":
-        print("Thanks for banking with us.")
-        break
+#     elif option == "#":
+#         print("Thanks for banking with us.")
+#         break
         
-    else: 
-        print("Invalid option")
+#     else: 
+#         print("Invalid option")
 
 
 # x = 1
@@ -336,3 +336,93 @@ while True:
 #     x += 1
 #     if x == 10:
 #         break
+
+
+# PYTHON STRINGS
+
+var = "Hello, Good morning to you all, Welcome back." 
+# ['H', 'e', 'l', 'l', 'o', ',', ' ', 'G' ...] # the way python reads the string
+# print(type(var))
+# print(len(var))
+# print(var[-1])
+
+# slicing
+# print(var[0:3])
+# print(var[3:4])
+# var[0] = "L"  # ERROR
+
+# print(var.upper())
+# print(var.lower())
+# print(var.title())
+# print(var.capitalize())
+
+
+# print(len(var.strip()))
+dob = "%&$03-05-1990//*"
+# print(dob.strip('%&$/*'))
+
+
+# print("1. Nigeria is in continent Europe. yes/no: ")
+# ans = input('Ans: ')
+# if ans.strip().lower() == "no":
+#     print("Correct")
+# else:
+#     print("Worng")
+
+# print(var.startswith('Hello, '))
+# check = input("").strip().lower()
+# print(var.endswith(check))
+
+# print(var.find('hello'))
+
+# email validator
+# email = input('email: ').strip().lower()
+
+# if email.find('@') != -1 and email.find('.') != -1:
+# if '@' in email and '.' in email:
+#     print("Email is valid")
+    
+# else:
+#     print("Invalid email")
+
+
+# print(var.index('h'))
+
+# (print(len(var.split())))
+# print(var.split(','))
+
+stmt = ['How', 'are', 'you']
+print(' '.join(stmt))
+
+
+
+# class activity  
+# 1. build a simple cbt system.
+# 2. build a word counter.
+# 3 build a simple calculator
+
+
+# A grading sytem
+# 0- 39 => F
+# 40 - 44 => E 
+# 45 - 49 => D
+# 50 - 59 => C
+# 60 - 69  => B
+# 70 - 100 => A  
+
+# score = int(input("Score: "))
+# if score >= 70 and score <= 100:
+#     print("Grade A")
+# elif score >= 60 and score <= 69:
+#     print("Grade B")
+# elif score >= 50 and score <= 59:
+#     print("Grade C")
+# elif score >= 45 and score <= 49:
+#     print("Grade D")
+# elif score >= 40 and score <=44:
+#     print("Grade E")
+# elif score >= 0 and score <= 39:
+#     print("Grade F")
+# else:
+#     print("Invalid score") 
+ 
