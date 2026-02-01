@@ -391,8 +391,8 @@ dob = "%&$03-05-1990//*"
 # (print(len(var.split())))
 # print(var.split(','))
 
-stmt = ['How', 'are', 'you']
-print(' '.join(stmt))
+# stmt = ['How', 'are', 'you']
+# print(' '.join(stmt))
 
 
 
@@ -426,3 +426,98 @@ print(' '.join(stmt))
 # else:
 #     print("Invalid score") 
  
+ 
+# Special character
+#  \n -> nextline
+#  \t -> tab
+#  \r -> return
+#  \b -> backspace
+#  \ -> escape char
+#  r -> raw string
+
+# var = "C:\\note.txt"
+# var = "Hello\t\thow are you" 
+# var = "Hello\rhow are you" 
+# var = r"Hello\b\bhow are you" 
+
+# print(var)
+
+
+# Python collection/arrays
+# 1. List: It is Ordered, Indexed, allows duplicate, It is mutable/changeable
+cars = ["Benz", "Lexus", "Audi", "BMW", "Benz"]
+# print(len(cars))
+# print(cars[-2])
+# print(cars[0:3])
+# print(cars[-2][0])
+# print(cars[-3][-1])
+
+# cars.append('Toyota')
+# cars.insert(0, 'Lambo')
+# cars.extend(['Lambo', 'Ferrari', 'Tesla'])
+# print(cars + ['Lambo', 'Ferrari', 'Tesla'])
+
+# cars.pop(2)
+# cars.remove("Lexus")
+# cars.clear()
+
+# print(cars.index("Lexus"))
+# cars.reverse()
+
+# print(cars)
+
+database = []
+print("\nWelcome to MyTodo App")
+while True:
+    print("""
+        1. Add a todo
+        2. Remove a todo
+        3. Edit a todo
+        4. Clear
+        5. View todo
+        #. Exit
+    """)
+    
+    option = input("Option: ")
+    if option == "1":
+        todo = input("Todo: ").strip().title()
+        database.append(todo)
+        print(f"{todo} added to the list.")
+        
+    elif option == '2':
+        no = int(input("Remove Todo at number ___: "))
+        no -= 1
+        if no >= len(database):
+            print("Invalid number.")
+            continue
+        
+        database.pop(no)
+        print("Item deleted.")
+    
+    elif option == "4":
+        confirm = input(r'Confirm clear? Y\N: ') 
+        if confirm.upper() != 'Y':  
+            continue
+        
+        database.clear()
+        print('List Cleared.') 
+
+        
+        
+    elif option == "5":
+        print(database)
+    
+    elif option == "#":
+        print("Goodbye!")
+        break
+    
+    else:
+        print("Invalid option.")
+
+# 2. Tuple
+# 3. Set
+# 4. Dictionary
+
+# Assignment
+# 1. Read up on forloop
+# 2. Build a Time/multiplication table using the concept of forloop
