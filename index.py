@@ -466,58 +466,182 @@ cars = ["Benz", "Lexus", "Audi", "BMW", "Benz"]
 
 # print(cars)
 
-database = []
-print("\nWelcome to MyTodo App")
-while True:
-    print("""
-        1. Add a todo
-        2. Remove a todo
-        3. Edit a todo
-        4. Clear
-        5. View todo
-        #. Exit
-    """)
+# database = []
+# print("\nWelcome to MyTodo App")
+# while True:
+#     print("""
+#         1. Add a todo
+#         2. Remove a todo
+#         3. Edit a todo
+#         4. Clear
+#         5. View todo
+#         #. Exit
+#     """)
     
-    option = input("Option: ")
-    if option == "1":
-        todo = input("Todo: ").strip().title()
-        database.append(todo)
-        print(f"{todo} added to the list.")
+#     option = input("Option: ")
+#     if option == "1":
+#         todo = input("Todo: ").strip().title()
+#         database.append(todo)
+#         print(f"{todo} added to the list.")
         
-    elif option == '2':
-        no = int(input("Remove Todo at number ___: "))
-        no -= 1
-        if no >= len(database):
-            print("Invalid number.")
-            continue
+#     elif option == '2':
+#         no = int(input("Remove Todo at number ___: "))
+#         no -= 1
+#         if no >= len(database):
+#             print("Invalid number.")
+#             continue
         
-        database.pop(no)
-        print("Item deleted.")
+#         database.pop(no)
+#         print("Item deleted.")
     
-    elif option == "4":
-        confirm = input(r'Confirm clear? Y\N: ') 
-        if confirm.upper() != 'Y':  
-            continue
+#     elif option == "4":
+#         confirm = input(r'Confirm clear? Y\N: ') 
+#         if confirm.upper() != 'Y':  
+#             continue
         
-        database.clear()
-        print('List Cleared.') 
+#         database.clear()
+#         print('List Cleared.') 
 
         
         
-    elif option == "5":
-        print(database)
+#     elif option == "5":
+#         print(database)
     
-    elif option == "#":
-        print("Goodbye!")
-        break
+#     elif option == "#":
+#         print("Goodbye!")
+#         break
     
-    else:
-        print("Invalid option.")
-
-# 2. Tuple
-# 3. Set
-# 4. Dictionary
+#     else:
+#         print("Invalid option.")
 
 # Assignment
 # 1. Read up on forloop
 # 2. Build a Time/multiplication table using the concept of forloop
+
+
+# LOOPS
+# For Loops and While Loops
+
+# fruits = ["Apple", 'Pineapple', 'Orange']
+# count = 1
+# for item in fruits:
+#     print(item, count)
+#     count += 1
+
+
+# for i in range(10):
+#     print(i)
+
+# for letter in "Pineapple":
+#     print(letter)
+
+# for i in range(1, 13):
+#     # print(i, "Times Table")
+#     for x in range(1, 13):
+#         # print(f"{i} x {x} = {i * x}")
+#         print(f"{i * x} ", end=' ')
+#     print()
+
+
+# While loop
+
+# x = 10
+# while x > 0:
+#     print(x)
+#     if x == 5:
+#         break
+
+#     x -= 1
+
+
+# ticket_no = 10
+# while ticket_no > 0: 
+#     age = int(input("Age: "))
+#     if age < 16:
+#         print("The movie is rated 16+ hence you are too young.")
+#         continue
+    
+#     ticket_no -= 1
+#     print('Take ticket. remaining', ticket_no)
+
+
+
+# 2. Tuple
+# tuple is a type of python collection that is indexed, duplicated, unchangeable/immutable,  ordered
+# () or tuple()
+
+fruits = ("Apple", 'Pineapple', 'Orange', 'Apple')
+# print(type(fruits))
+# print(fruits)
+# print(fruits[0:3])
+# print(fruits[-3:-1])
+# print(fruits[::2])
+# print(fruits[::-1])
+
+# fruits = list(fruits)
+# fruits[0] = 'Cherry'
+# fruits = tuple(fruits)
+# print(fruits)
+
+# unpacking
+# a, b, c, d = fruits
+# c, *a, b = fruits
+# print(a)
+
+# print(fruits.count('Apple'))
+# print(fruits.index('Apple', 1))
+
+
+prices = [1000, 200, 3250, 900]
+products = ['Shoe', 'Cap', 'Jean', 'Shirt']
+
+items_price = [
+    ('Shoe', 1000),
+    ('Cap', 200),
+    ('Jean', 3250),
+    ('Shirt', 900)
+]
+
+# x = 0
+# for i in prices:
+#     x += i
+    
+# print(x)
+# print(sum(prices))
+# print(max(prices))
+# print(min(prices))
+
+# print(sum(prices)/len(prices))
+
+# for item, price in zip(products, prices):
+#     print( price)
+    
+# for item, price in items_price:
+#     print(price)
+
+
+# print('1. What is the capital of Nigeria. a) Lagos b.) Abuja')
+# ans = input("Answer: ").strip().lower()
+# if ans == 'a':
+#     print
+
+
+questions = [
+    'What is the capital of Nigeria. a) Lagos b.) Abuja',
+    'What is the capital of Ghana. a) Accra b.) Abuja'
+]
+
+answers = ['b', 'a']
+
+score = 0
+for ques, ans in zip(questions, answers):
+    print(ques)
+    user = input("Answer: ").strip().lower()
+    if user == ans:
+        score += 1
+
+print("Total =", score)
+
+
+# 3. Set
+# 4. Dictionary
