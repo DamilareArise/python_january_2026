@@ -626,22 +626,84 @@ items_price = [
 #     print
 
 
-questions = [
-    'What is the capital of Nigeria. a) Lagos b.) Abuja',
-    'What is the capital of Ghana. a) Accra b.) Abuja'
-]
+# questions = [
+#     'What is the capital of Nigeria. a) Lagos b.) Abuja',
+#     'What is the capital of Ghana. a) Accra b.) Abuja'
+# ]
 
-answers = ['b', 'a']
+# answers = ['b', 'a']
 
-score = 0
-for ques, ans in zip(questions, answers):
-    print(ques)
-    user = input("Answer: ").strip().lower()
-    if user == ans:
-        score += 1
+# score = 0
+# for ques, ans in zip(questions, answers):
+#     print(ques)
+#     user = input("Answer: ").strip().lower()
+#     if user == ans:
+#         score += 1
 
-print("Total =", score)
+# print("Total =", score)
 
 
-# 3. Set
-# 4. Dictionary
+# 3. Set : unordered, unindexed, does not allow duplicate item, unchangeable/immutable
+# {} or set()
+
+fruits = {"Apple", "Orange", "Watermelon", "Cherry", "Orange"}
+# print(type(fruits))
+# print(fruits[0])
+setA = {8, 6, 5, 3, 4, 2, 1, 9, 7}
+setB = {11, 13, 12}
+setC = {8, 7, 9, 6}
+# print(setA)
+
+# fruits.add("Banana")
+# fruits.update({"Tomato", "Strawberry"})
+# fruits.pop()
+# fruits.remove("apple")
+# fruits.discard('apple')
+
+# print(fruits)
+# print(setA.union(setB))
+# print(setA.intersection(setB))
+# print(setA.difference(setB))
+# print(setB.difference(setA))
+# print(setA.symmetric_difference(setB))
+# setA.intersection_update(setB)
+# print(setA)
+
+# print(setA.isdisjoint(setB))
+# print(setC.issubset(setA))
+# print(setA.issuperset(setC))
+
+# 4. Dictionary 
+student1 = {
+    'name': 'Oke Habeeb',
+    'gender': 'Male',
+    'id': 12345,
+    "address": {
+        "country": "Nigeria",
+        "state": "Oyo State",
+        "coord": {
+            'lat': 2343,
+            "lon": 234
+        }
+    }
+}
+# print(student1["address"]['coord']['lat'])
+
+# print(student1["name"])
+# print(student1.values())
+# print(student1.keys())
+# print(student1.items())
+
+# for key, value in student1.items():
+#     print(value)
+    
+# [('name', 'Oke Habeeb'), ('gender', 'Male'), ('id', 12345)]
+
+# print(student1.get('Name', 'Not Found'))
+# student1.pop('id')
+# student1.popitem()
+# student1.update({"dept": "Data Science"})
+
+# print(student1)
+
+# 
