@@ -706,4 +706,149 @@ student1 = {
 
 # print(student1)
 
-# 
+
+
+# Python Function
+
+# 1. declaration stage
+# 2. definition stage
+# 3. invokation stage
+
+def run():
+    print("I am running")
+    
+# run()
+
+def sum():
+    num1 = int(input('Num 1: '))
+    num2 = int(input('Num 2: '))
+    print("Ans:", num1 + num2)
+    
+# sum()
+
+# Types of functions
+# 1. Parametized
+# 2. unparametized
+
+def run(speed):
+    print(f"I am running at {speed}km/hr")
+
+# run(20)
+
+
+# name = input("Name: ")
+# speed = input("speed: ")
+
+# def run(name, speed = 10):
+#     print(f"{name} is running at {speed}km/hr")
+
+# run(name, speed)
+
+
+# return function
+
+def sum():
+    num1 = int(input('Num 1: '))
+    num2 = int(input('Num 2: '))
+    
+    return num1 + num2
+
+# print(sum())
+
+def calculator():
+    print("""
+        1. Add
+        2. Subtract
+        3. Multiply
+        #. exit
+    """)
+    option = input("Option: ")
+    
+    if option in ['1', '2', '3']:
+        val1 = float(input("Value 1: "))
+        val2 = float(input("Value 2: "))
+
+
+    if option == '1':
+       print(add(val1, val2))
+
+    elif option == '2':
+        print(subtract(val1, val2))
+
+    elif option == "3":
+        print(multiply(val1, val2))
+        
+    elif option == "#":
+        exit()
+    
+    else:
+        print("Invalid Input")
+    
+    calculator() # recursive function
+
+def add(val1, val2):
+    return val1 + val2
+
+def subtract(val1, val2):
+    return val1 - val2
+
+def multiply(val1, val2):
+    return val1 * val2
+
+
+# calculator()
+
+
+# Local variables and global variables
+
+
+balance = 0 # global
+
+def deposit():
+    print("Deposit...")
+    global balance
+    
+    amount = float(input("amount: "))
+    if amount <= 0:
+        print("Amount is required")
+        deposit()
+        
+    balance += amount
+    # balance + amount
+    print(f"{amount} deposited successfully.")
+    
+    
+def withdraw():
+    global balance
+    
+    amount = float(input("amount: "))
+    if amount <= 0:
+        print("Amount is required")
+        withdraw()
+    
+    elif amount > balance:
+        print("Insufficient balance")
+    
+    else:
+        balance -= amount
+        print(f"{amount} withdrawn successfully, your balance is {balance}")
+        
+        
+# deposit()
+# withdraw()
+
+#
+        
+    
+def sum(num1:float | int, num2: float | int) -> float | int:
+    """
+    This is a function that sums two input
+    """
+    return num1 + num2
+
+# sum()
+
+
+# anonymous func
+sum2 = lambda num1, num2 : num1 + num2
+print(sum2(4, 4))
