@@ -851,4 +851,95 @@ def sum(num1:float | int, num2: float | int) -> float | int:
 
 # anonymous func
 sum2 = lambda num1, num2 : num1 + num2
-print(sum2(4, 4))
+# print(sum2(4, 4))
+
+
+# grading system
+
+def check_grade(score: int):
+    if score >= 70 and score <=100:
+        return 'A'
+    elif score >= 60 and score < 70:
+        return 'B'
+    else:
+        return 'Invalid' 
+    
+# grade = check_grade(777)
+# print(grade)
+
+
+# ussd app
+
+def home():
+    ussd = input("USSD: ").strip()
+    if ussd == "*312#":
+        dashboard()
+    else:
+        user = input('Invalid ussd code. Press enter to try again or 1 to exit: ')
+        if user == '1':
+            exit()
+        else:
+            home()
+        
+def dashboard():
+    print("""
+        1. Data plan
+        2. Check Balance
+        #. exit 
+    """)
+    user = input("option: ")
+    if user == '1':
+        data_plan()
+    elif user == '2':
+        check_balance()
+    elif user == "#":
+        exit()
+    else:
+        print("invalid option")
+        dashboard()
+
+def data_plan():
+    print("""
+        1. 500mb
+        2. 1gb
+        3. 5gb
+        *. dashboard
+        #. exit 
+    """)
+    user = input("Option: ")
+    
+    if user == "*":
+        dashboard()
+    elif user == "#":
+        exit()
+    else:
+       print("invalid option")
+       data_plan()  
+
+def check_balance():
+    pass
+
+
+# home()
+
+
+
+password = "0000" # global variable
+
+def change_password():
+    global password
+    
+    old_pass = input("old password: ").strip()
+    new_pass = input("new password: ").strip()
+    confirm_pass = input("confirm password: ").strip()
+    
+    if old_pass != password:
+        print("incorrect old password")
+    elif new_pass != confirm_pass:
+        print("password do not match")
+        
+    else:
+        password = new_pass
+        print("Password reset successfully")
+        
+change_password()
