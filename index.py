@@ -1012,7 +1012,7 @@ class BankAccount:
         print(f"Welcome back {self.account_name}")
         
     
-    def deposit(self, amount):
+    def __deposit(self, amount):  #private func
         if not amount or amount < 0:
             return 'Amount is Invalid'
         else:
@@ -1039,7 +1039,7 @@ account1 = BankAccount('Ojo Ade')
 
 # account1.__balance = 10000 
 
-# message = account1.withdraw(1000)
+# message = account1.__deposit(1000)
 # print(message)
 
 # balance = account1.getBalance()
