@@ -942,4 +942,105 @@ def change_password():
         password = new_pass
         print("Password reset successfully")
         
-change_password()
+# change_password()
+
+
+
+# OOP -> Object Oriented Programming
+# It is a way of writing your python codes in an organized, reusable manner. It help represent your codes like a real world object
+
+# object => is anything that has a property/attributes and can perform a function e.g car, laptop, human
+
+# object student 
+# properties -> Name, Course, Gender
+# functions -> study(), exam(), payTution()
+
+# object car
+# properties -> color, brand_name, model
+# functions -> start(), break(), accelerate()
+
+
+# class -> It is a blue print or model of an object
+# self -> Allow the function or proterties in the class to be referenced to the class
+
+class Student:
+    Name = 'John Doe'
+    Course = 'Data Science'
+    Gender = 'Male'
+    School = 'SQI College Of ICT'
+    
+    def __init__(self, name, course):
+        self.Name = name
+        self.Course = course
+        
+        print(f"Welcome back {self.Name}")
+    
+    def study(self):
+        print(f'{self.Name} is studying {self.Course} at {self.School}')
+        
+
+# chioma = Student() # chioma is an object. choima is an instance of class Student
+# habeeb = Student()
+# ben = Student()
+
+# habeeb.Name = "Oke Habeeb"
+# habeeb.study()
+
+# chioma.Name = 'Mbam Chioma'
+# chioma.study()
+
+# ben.Name = "Benjamin"
+# ben.Course = "Artificial Intelligence"
+# ben.study()
+
+
+# ben = Student('Benjamin', 'AI')
+
+# 4-Pillars of OOP
+# 1. Encapsulation -> public, private, static and protected
+# 2. Inheritance
+# 3. Polymorphism
+# 4. Abstraction
+
+
+class BankAccount:
+    account_name = ""
+    __balance = 0    # private property
+    
+    def __init__(self, name):
+        self.account_name = name
+        print(f"Welcome back {self.account_name}")
+        
+    
+    def deposit(self, amount):
+        if not amount or amount < 0:
+            return 'Amount is Invalid'
+        else:
+            self.__balance += amount
+            return f"Deposit successful. balance is {self.__balance}"
+        
+    def withdraw(self, amount):
+        if not amount or amount < 0:
+            return 'Amount is Invalid'
+        elif amount > self.__balance:
+            return 'insufficient fund'
+        else:
+            self.__balance -= amount
+            return f"Withrawal successful. balance is {self.__balance}"
+        
+    def getBalance(self):
+        return self.__balance
+            
+    
+    
+account1 = BankAccount('Ojo Ade')
+# account1.account_name = 'Ojo Adewale'
+# print(account1.__balance)
+
+# account1.__balance = 10000 
+
+# message = account1.withdraw(1000)
+# print(message)
+
+# balance = account1.getBalance()
+# print(balance)
