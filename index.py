@@ -1009,15 +1009,14 @@ class BankAccount:
     
     def __init__(self, name):
         self.account_name = name
-        print(f"Welcome back {self.account_name}")
-        
+        print(f"Welcome back {self.account_name}") 
     
-    def __deposit(self, amount):  #private func
+    def deposit(self, amount):  
         if not amount or amount < 0:
             return 'Amount is Invalid'
         else:
             self.__balance += amount
-            return f"Deposit successful. balance is {self.__balance}"
+            return f"Deposit successful. balance is #{self.__balance:,}"
         
     def withdraw(self, amount):
         if not amount or amount < 0:
@@ -1026,14 +1025,14 @@ class BankAccount:
             return 'insufficient fund'
         else:
             self.__balance -= amount
-            return f"Withrawal successful. balance is {self.__balance}"
+            return f"Withrawal successful. balance is #{self.__balance:,}"
         
     def getBalance(self):
         return self.__balance
             
     
     
-account1 = BankAccount('Ojo Ade')
+# account1 = BankAccount('Ojo Ade')
 # account1.account_name = 'Ojo Adewale'
 # print(account1.__balance)
 
@@ -1044,3 +1043,106 @@ account1 = BankAccount('Ojo Ade')
 
 # balance = account1.getBalance()
 # print(balance)
+
+
+
+class Parent:
+    first_name = None
+    __last_name = "Thomas"
+    
+    def __init__(self, first_name):
+        self.first_name = first_name
+    
+    def intro(self):
+        print(f'I am {self.first_name} {self.__last_name}')
+        
+    def get_last_name(self):
+        return self.__last_name
+    
+    def change_last_name(self, new):
+        self.__last_name = new
+
+# parent1 = Parent('Paul')
+# parent1.intro()
+# print(parent1.__last_name)
+# print(parent1.get_last_name())
+# parent1.change_last_name("Adewale")
+# parent1.intro()
+
+class Child(Parent):
+    # first_name = "Femi"
+    age = None
+    def __init__(self, first_name, age):
+        super().__init__(first_name)
+        self.age = age
+        # print(self.get_last_name())
+    
+    def do_something(self):
+        print('I can do something else')
+        
+    def getAge(self):
+        print(f"{self.age}years")
+
+child1 = Child('Femi', 30)
+# child1.intro()
+# child1.do_something()
+# child1.getAge()
+
+
+class NewBank(BankAccount):
+    def __init__(self, name):
+        super().__init__(name)
+        self.dashboard()
+    
+    def dashboard(self):
+        print('''
+            1. Deposit
+            2. Withdraw
+            3. Check Balance
+            #. Exit
+        ''')
+        option = input('Option: ')
+        
+        if option == "1":
+            self.perform_deposit()
+        elif option == '2':
+            self.perform_withrawal()
+        elif option == '3':
+            balance = self.getBalance()
+            print(f"Your balance is #{balance:,}")
+            self.dashboard()
+        elif option == '#':
+            print("Goodbye")
+            exit()
+        else:
+            print("Invalid input")
+            self.dashboard()
+                     
+    def perform_deposit(self):
+        amount = float(input("Amount: "))
+        message = self.deposit(amount)
+        print(message)  
+        self.dashboard()
+          
+    def perform_withrawal(self):
+        amount = float(input("Amount: "))
+        message = self.withdraw(amount)
+        print(message)  
+        self.dashboard()  
+        
+        
+        
+
+bk = NewBank('Ojo Ade')
+
+
+# color = 'red'
+
+# class Choima:
+#     color = 'Blue'
+    
+#     def get_color(self):
+#         print(self.color)
+    
+# chi = Choima()
+# chi.get_color()
