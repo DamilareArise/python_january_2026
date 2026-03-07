@@ -1146,3 +1146,11 @@ bk = NewBank('Ojo Ade')
     
 # chi = Choima()
 # chi.get_color()
+
+# scripts: A single file that contains a set of python code that can be executed to perform a specific task e.g index.py, app.py, main.py
+
+# module: Is a script that contains a set of python code that can be imported and used in another script e.g index.py, app.py, main.py. it contains reusable functions, classes and variables
+
+# library: Is a collection of modules that can be imported and used in another script e.g math, random, datetime
+
+# framework: Is a collection of modules and libraries that can be imported and used in another script e.g Django, Flask, React, Angular
