@@ -93,6 +93,7 @@ conn = sql.connect(
     )
 
 cursor = conn.cursor()
+conn.autocommit = True
 
 # Types of sql queries
 # 1. DDL (Data Definition Language) - used to define the structure of the database
@@ -134,4 +135,94 @@ cursor = conn.cursor()
 # cursor.execute("ALTER TABLE users_table CHANGE balance account_balance FLOAT(10, 2) DEFAULT 0.0")
 
 
+# query = "INSERT INTO users_table(fullname, email, password, account_no) VALUES('Arise Damilare', 'dami@gmail.com', '1234', '1234567890')"
+# cursor.execute(query)
+
+import random
+
+def get_password():
+    password = input('Password: ').strip()
+    password2 = input('Confirm Password: ').strip()
+    if password == password2:
+        return password
+    else:
+        print('Password do not match')
+        return get_password()
+
+def signup():
+    print('Signup page\n')
+    fullname = input('Fullname: ').strip().title()
+    email = input('Email: ').strip().lower()
+    password = get_password()
+    account_no = random.randint(1000000000, 1099999999)
+
+    query = "INSERT INTO users_table(fullname, email, password, account_no) VALUES(%s, %s, %s, %s)"
+    values = (fullname, email, password, account_no)
+    cursor.execute(query, values)
+    
+    print('Registration completed!')
+
+# signup()
+
+
+# query = "UPDATE users_table SET account_balance = 10000"
+# cursor.execute(query)
+
+def deposit():
+    amount = float(input('Amount: '))
+    email = input('Email: ').strip().lower()
+    
+    if not amount or amount <= 0:
+        print('Invalid amount')
+    else:
+        
+        # fetch the previous balance then update
+        query = 'SELECT account_balance FROM users_table WHERE email = %s'
+        value = (email, )
+        cursor.execute(query, value)
+        details = cursor.fetchone()
+        if details:
+            balance = details[0]
+            balance += amount
+            
+            query = "UPDATE users_table SET account_balance = %s WHERE email = %s"
+            values = (balance, email)
+            cursor.execute(query, values)
+            print('Deposit successful')
+        else:
+            print('User not found')
+        
+        
+deposit()
+
+# query = "DELETE FROM users_table WHERE email=%s"
+# value = ('ade@gmail.com', )
+# cursor.execute(query, value)
+
+
+# query = "SELECT * FROM users_table"
+query = "SELECT fullname, account_no, account_balance FROM users_table"
+# cursor.execute(query)
+# details = cursor.fetchall()
+# print(details[1][0])
+# for each in details:
+#     print(each[0])
+
+def login():
+    print('Login\n')
+    email = input('Email: ').strip()
+    password = input('Passoword: ').strip()
+    
+    
+    query = "SELECT * FROM users_table WHERE email=%s AND password=%s"
+    values = (email, password)
+    cursor.execute(query, values)
+    detail = cursor.fetchone()
+    # print(detail)
+    if detail:
+        print('Welcome', detail[1])
+    else:
+        print('Invalid email or password')
+    
+# login()
 
